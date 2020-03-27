@@ -20,7 +20,7 @@ spring:
         enabled: true
       filter:
         stat:
-          slow-sql-millis: 3000 #显示慢查询
+          slow-sql-millis: 20 #显示慢查询
           merge-sql: true   #合并一样的sql
           log-slow-sql: true
           connection-stack-trace-enable: true  #内存泄漏追踪
@@ -38,11 +38,12 @@ spring:
           data-source-log-enabled: true
       web-stat-filter:
         session-stat-enable: true
-      aop-patterns: com.framework.monitor.controller.*,com.framework.monitor.dao.*,com.framework.monitor.service.*
+        session-stat-max-count: 2000
+      aop-patterns: com.framework.hanason.controller.*,com.framework.hanason.dao.*,com.framework.hanason.service.*
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  type-aliases-package: com.framework.monitor.entity
+  type-aliases-package: com.framework.hanason.entity
 
 logging:
   level:

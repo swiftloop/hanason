@@ -39,7 +39,7 @@
 
         <dependency>
             <groupId>win.oscene</groupId>
-            <artifactId>hanason-common</artifactId>
+            <artifactId>hanason-web</artifactId>
         </dependency>
 
         <dependency>
@@ -80,16 +80,7 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -112,7 +103,7 @@
 
     <profiles>
         <profile>
-            <id>dev-tool</id>
+            <id>dev</id>
             <dependencies>
                 <dependency>
                     <groupId>org.springframework.boot</groupId>

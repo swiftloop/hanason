@@ -19,8 +19,13 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
         </dependency>
 
         <dependency>
@@ -45,6 +50,11 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>win.oscene</groupId>
+            <artifactId>hanason-common</artifactId>
         </dependency>
 
 

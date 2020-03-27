@@ -33,6 +33,7 @@
         <module>hanason-generator</module>
         <module>hanason-config</module>
         <module>hanason-common</module>
+        <module>hanason-web</module>
     </modules>
 
 
@@ -49,6 +50,21 @@
                 <artifactId>hanason-common</artifactId>
                 <version>${hanason}</version>
             </dependency>
+
+            <dependency>
+                <groupId>win.oscene</groupId>
+                <artifactId>hanason-web</artifactId>
+                <version>${hanason}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>win.oscene</groupId>
+                <artifactId>hanason-generator</artifactId>
+                <version>${hanason}</version>
+            </dependency>
+
+
+
             <!--jwt-->
             <dependency>
                 <groupId>com.auth0</groupId>
