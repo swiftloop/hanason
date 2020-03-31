@@ -57,3 +57,5 @@ server:
     context-path: /hanason
 hanason:
   debug: false
+  system:
+    api-sign-key: ccc

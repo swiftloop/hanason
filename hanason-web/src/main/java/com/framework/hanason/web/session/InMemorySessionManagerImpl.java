@@ -3,6 +3,7 @@ package com.framework.hanason.web.session;
 import com.framework.hanason.common.exception.ExceptionUtils;
 import com.framework.hanason.common.strings.Strings;
 import com.framework.hanason.web.vo.IUserSession;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
@@ -11,10 +12,11 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * @author sorata 2020-03-27 18:14
  */
+@Service
 public class InMemorySessionManagerImpl<T extends IUserSession> implements SessionManager<T> {
 
     private final ConcurrentHashMap<String, T> MAP = new ConcurrentHashMap<>(16);
-
+    private final ConcurrentHashMap<String,String> SESSION_MAP = new ConcurrentHashMap<>(16);
 
     @Override
     public T getUser(String userId) {

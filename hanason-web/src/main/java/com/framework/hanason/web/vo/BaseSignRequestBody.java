@@ -49,11 +49,12 @@ public abstract class BaseSignRequestBody {
             } catch (IllegalAccessException e) {
                 ex = e;
                 hasException = true;
+                break;
             }
         }
         if (hasException){
             log.error("获取签名参数失败",ex);
-            return "-1" + ex.getMessage();
+            return "-1$" + ex.getMessage();
         }
         StringBuilder builder = new StringBuilder();
         map.forEach((k,v)-> builder.append(k).append(v));

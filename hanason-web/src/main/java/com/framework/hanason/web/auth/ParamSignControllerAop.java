@@ -40,7 +40,6 @@ public class ParamSignControllerAop {
 
     @Before(value = "point()")
     public void around(JoinPoint joinPoint) {
-        System.out.println("得到的目标为：" + joinPoint.getTarget());
         Object[] args = joinPoint.getArgs();
         boolean done = false;
         for (Object arg : args) {
@@ -56,7 +55,6 @@ public class ParamSignControllerAop {
                 String singChar = ((BaseSignRequestBody) arg).getSingChar();
                 byte[] doFinal = HmacUtils.getInitializedMac(HmacAlgorithms.HMAC_SHA_256,
                         systemProperties.getSystem().getApiSignKey().getBytes()).doFinal(singChar.getBytes());
-                System.out.println("得到的密钥为:" + Hex.encodeHexString(doFinal));
                 if (!((BaseSignRequestBody) arg).getSign().equals(Hex.encodeHexString(doFinal))) {
                     throw new WebServerException(ErrorCodeEnum.PARAM_SIGN_ERROR.getCode(),
                             ErrorCodeEnum.PARAM_SIGN_ERROR.getMsg());
